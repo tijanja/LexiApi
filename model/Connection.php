@@ -1,19 +1,17 @@
-<?php
-
-class Connection
+<?php 
+ class Connection
 {
-    
-    function __construct()
-    {
-        $this->connect();
+    var $db;
+    function __construct() {
+        $this->db = new mysqli("localhost","root","Project123");
+        
+        if($this->db->connect_errno > 0){
+            die('Unable to connect to database [' . $this->db->connect_error . ']');
+        }
+
     }
-
-
-    private function connect()
+    function getDBObject()
     {
-        mysql_connect("localhost","root","Project123");
-        mysql_select_db("lexi"); 
+        return $this->db; 
     }
 }
- new Connection();
-?>
