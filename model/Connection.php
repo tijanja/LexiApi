@@ -11,8 +11,8 @@ class Connection
 
     private function connect()
     {
-        mysql_connect("localhost","gpaye_lex","Project123");
-        mysql_select_db("gpayexpress1_lex");
+        mysql_connect("localhost","root","Project123");
+        mysql_select_db("lexi");
     }
 }
  new Connection();
