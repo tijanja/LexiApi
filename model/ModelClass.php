@@ -158,11 +158,11 @@ class Statute extends Connection
     
     function newSearch($param)
     {
-        echo $search = $param->search_query;
+        $search = $param->search_query;
         
         $this->result = $this->db->query("SELECT * FROM statute_citator WHERE statute_title like '%$search%' or statute_year='$search';");  
               
-        print_r($this->result);
+        printf($this->result);
                     $items = array();
                     while($row= $this->result->fetch_assoc())
                     {
