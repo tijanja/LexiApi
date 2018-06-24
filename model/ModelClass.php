@@ -1,12 +1,16 @@
 <?php
 
-class Statute
+class Statute extends Connection
 {
     var $query ;
      var $result;
      var $searchKeyWord;
      var $resultList;
      
+     function __construct() {
+         parent::__construct();
+     }
+             
     function getStatuteList($search)
     {
         if(preg_match("/[0-9]{4} No\. [0-9]{1,4}/i", $search))
@@ -154,7 +158,7 @@ class Statute
     
     function newSearch($param)
     {
-        $search = $param['search_query'];
+        $search = $param->search_query;
         
         $this->result = mysql_query("SELECT * FROM statute_citator WHERE statute_title like '%$search%' or statute_year='$search';");  
                     
