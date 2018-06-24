@@ -163,7 +163,7 @@ class Statute extends Connection
         $this->result = $this->db->query("SELECT * FROM statute_citator WHERE statute_title like '%$search%' or statute_year='$search';");  
                     
                     $items = array();
-                    while($row=  mysql_fetch_array($this->result))
+                    while($row= $this->result->fetch_assoc())
                     {
                      
                         /*$retrieved = str_replace("-","",$row['commence_date']);
