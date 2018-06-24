@@ -162,6 +162,7 @@ class Statute extends Connection
         
         $this->result = $this->db->query("SELECT * FROM statute_citator WHERE statute_title like '%$search%' or statute_year='$search';");  
                     $items = array();
+                    echo $this->result->num_rows;
                     while($row= $this->result->fetch_assoc())
                     {
                      
