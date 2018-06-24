@@ -1,6 +1,6 @@
 <?php
 session_start();
-    include_once 'connection.php';
+    include_once 'Connection.php';
     include_once 'ModelClass.php';
     
 ?>
