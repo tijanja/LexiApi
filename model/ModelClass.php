@@ -160,7 +160,7 @@ class Statute extends Connection
     {
         $search = $param->search_query;
         
-        $this->result = mysql_query("SELECT * FROM statute_citator WHERE statute_title like '%$search%' or statute_year='$search';");  
+        $this->result = $this->db->query("SELECT * FROM statute_citator WHERE statute_title like '%$search%' or statute_year='$search';");  
                     
                     $items = array();
                     while($row=  mysql_fetch_array($this->result))
