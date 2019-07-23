@@ -29,7 +29,7 @@ $obj = json_decode($obj1);
 
 print_r($obj);
 
-//echo file_get_contents("php://input");
+echo file_get_contents("php://input");
 $controller = ucfirst(strtolower(trim($obj->controller)));
 $action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
