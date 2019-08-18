@@ -28,7 +28,7 @@ try
 $obj1 = file_get_contents("php://input");
 $obj = json_decode($obj1,true);
 
-var_dump($obj1);
+var_dump($obj->controller);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
 $action = strtolower(trim($obj->action))."Action";
