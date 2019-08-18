@@ -1,6 +1,4 @@
-<?php
-ini_set("allow_url_fopen", "on");
-if (isset($_SERVER['HTTP_ORIGIN'])) {
+<?php if (isset($_SERVER['HTTP_ORIGIN'])) {
         header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
         header('Access-Control-Allow-Credentials: true');
         header('Access-Control-Max-Age: 86400');    // cache for 1 day
@@ -25,12 +23,9 @@ try
   //      $controller = ucfirst(strtolower(trim($params['controller'])));
 //        $action = strtolower(trim($params['action']))."Action";
 
-echo $obj1 = file_get_contents("php://input");
+$obj1 = file_get_contents("php://input");
 $obj = json_decode($obj1,true);
 
-print_r($obj);
-echo 'tunji';
-echo file_get_contents("php://input");
 $controller = ucfirst(strtolower(trim($obj->controller)));
 $action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
@@ -39,7 +34,7 @@ include_once "controller/{$controller}.php";
 }
 else
 {
-throw new Exception('Controller is invalid.');
+  throw new Exception('Controller is invalid.');
 }
 $controller = new $controller($obj);
 if(method_exists($controller, $action)===false)
