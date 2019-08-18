@@ -1,5 +1,5 @@
 <?php
-ini_set("allow_url_fopen", true);
+ini_set("allow_url_fopen", "on");
 if (isset($_SERVER['HTTP_ORIGIN'])) {
         header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
         header('Access-Control-Allow-Credentials: true');
