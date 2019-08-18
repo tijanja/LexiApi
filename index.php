@@ -23,7 +23,7 @@ try
   //      $controller = ucfirst(strtolower(trim($params['controller'])));
 //        $action = strtolower(trim($params['action']))."Action";
 
-$obj1 = file_get_contents("php://input");
+$obj1 = file_get_contents("php://input",true);
 $obj = json_decode($obj1,true);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));

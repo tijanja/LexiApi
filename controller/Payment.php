@@ -1,8 +1,8 @@
 <?php
 
-    if(file_get_contents("https://google.com"))
+    if(file_get_contents("http://206.189.115.158/LexiApi/?controller=Merchant&action=partList&statuteId=327"))
     {
-        echo file_get_contents("https://google.com",true);
+        echo json_decode(file_get_contents("http://206.189.115.158/LexiApi/?controller=Merchant&action=partList&statuteId=327",true),true);
     }
     else
     {
