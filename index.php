@@ -25,8 +25,8 @@ try
   //      $controller = ucfirst(strtolower(trim($params['controller'])));
 //        $action = strtolower(trim($params['action']))."Action";
 
-$obj1 = file_get_contents("php://input");
-$obj = json_decode($obj1);
+echo $obj1 = file_get_contents("php://input");
+$obj = json_decode($obj1,true);
 
 print_r($obj);
 echo 'tunji';
