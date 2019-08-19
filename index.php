@@ -34,7 +34,7 @@ $obj = json_decode($obj1,false);
 
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
-$action = strtolower(trim($obj['action']))."Action";
+$action = strtolower(trim($obj->action))."Action";
 
 if(file_exists("controller/{$controller}.php"))
 {
