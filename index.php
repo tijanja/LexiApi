@@ -30,9 +30,10 @@ try
 $obj1 = file_get_contents("php://input");
 $obj = json_encode($obj1,true);
 
-var_dump($obj);
+//var_dump($obj->controller);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
+var_dump($controller);
 $action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
 {
