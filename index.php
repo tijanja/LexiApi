@@ -29,11 +29,11 @@ try
 
 $obj1 = file_get_contents("php://input");
 
-$obj = json_decode($obj1,true);
+$obj = json_decode($obj1,false);
 
 var_dump(json_decode($obj1));
 
-$controller = ucfirst(strtolower(trim($obj['controller'])));
+$controller = ucfirst(strtolower(trim($obj->controller)));
 var_dump($controller);
 $action = strtolower(trim($obj['action']))."Action";
 
