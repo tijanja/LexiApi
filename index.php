@@ -31,18 +31,19 @@ $obj1 = file_get_contents("php://input");
 
 $obj = json_encode(json_decode($obj1,true),true);
 
-var_dump($obj);
+var_dump($obj->controller);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
 var_dump($controller);
 $action = strtolower(trim($obj['action']))."Action";
+
 if(file_exists("controller/{$controller}.php"))
 {
-include_once "controller/{$controller}.php";
+    include_once "controller/{$controller}.php";
 }
 else
 {
-  throw new Exception('Controller is invalid.');
+    throw new Exception('Controller is invalid.');
 }
 
 $controller = new $controller($obj);
