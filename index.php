@@ -50,7 +50,6 @@ if(method_exists($controller, $action)===false)
 {
 throw new Exception('Action is invalid.');
 }
-var_dump($controller);
 $return = $controller->$action();
 if($return !== FALSE)
 {
