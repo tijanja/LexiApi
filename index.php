@@ -31,7 +31,7 @@ $obj1 = file_get_contents("php://input");
 
 $obj = json_encode(json_decode($obj1,true));
 
-var_dump($obj1);
+var_dump($obj1->controller);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
 var_dump($controller);
