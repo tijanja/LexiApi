@@ -32,9 +32,9 @@ $obj = json_decode($obj1,true);
 
 var_dump($obj['controller']);
 
-$controller = ucfirst(strtolower(trim($obj->controller)));
+$controller = ucfirst(strtolower(trim($obj['controller'])));
 var_dump($controller);
-$action = strtolower(trim($obj->action))."Action";
+$action = strtolower(trim($obj['action']))."Action";
 if(file_exists("controller/{$controller}.php"))
 {
 include_once "controller/{$controller}.php";
