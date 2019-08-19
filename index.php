@@ -22,10 +22,7 @@
  
 try
 {
-//	$params = $_REQUEST;
-        
-  //      $controller = ucfirst(strtolower(trim($params['controller'])));
-//        $action = strtolower(trim($params['action']))."Action";
+      $action = strtolower(trim($params['action']))."Action";
 
 $obj1 = file_get_contents("php://input");
 
