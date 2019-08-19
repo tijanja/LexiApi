@@ -29,7 +29,7 @@ try
 
 $obj1 = file_get_contents("php://input");
 
-$obj = json_encode(json_decode($obj1,true));
+$obj = json_decode($obj1,true);
 
 var_dump(json_decode($obj1));
 
