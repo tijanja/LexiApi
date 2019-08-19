@@ -33,7 +33,7 @@ $obj = json_decode($obj1,true);
 
 var_dump(json_decode($obj1));
 
-$controller = ucfirst(strtolower(trim($obj->controller)));
+$controller = ucfirst(strtolower(trim($obj['controller'])));
 var_dump($controller);
 $action = strtolower(trim($obj['action']))."Action";
 
