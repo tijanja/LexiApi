@@ -1,12 +1,12 @@
 <?php
 
-// if (isset($_SERVER['HTTP_ORIGIN'])) {
+ if (isset($_SERVER['HTTP_ORIGIN'])) {
         header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
         header('Access-Control-Allow-Credentials: true');
         header('Access-Control-Max-Age: 86400');    // cache for 1 day
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-   // }
+    }
 
     // Access-Control headers are received during OPTIONS requests
     if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
@@ -31,10 +31,9 @@ $obj1 = file_get_contents("php://input");
 
 $obj = json_decode($obj1,false);
 
-var_dump(json_decode($obj1));
+var_dump($obj);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
-var_dump($controller);
 $action = strtolower(trim($obj['action']))."Action";
 
 if(file_exists("controller/{$controller}.php"))
@@ -54,13 +53,13 @@ throw new Exception('Action is invalid.');
 $return = $controller->$action();
 if($return !== FALSE)
 {
-$result["data"] = $return;
-$result["success"] = TRUE;
+    $result["data"] = $return;
+    $result["success"] = TRUE;
 }
 else
 {
-$result["data"] =$return;
-$result["success"] = FALSE;
+    $result["data"] =$return;
+    $result["success"] = FALSE;
 }
 }
 catch( Exception $e ) {
