@@ -31,7 +31,7 @@ $obj1 = file_get_contents("php://input");
 
 $obj = json_decode($obj1,false);
 
-var_dump($obj);
+var_dump($obj->action);
 
 $controller = ucfirst(strtolower(trim($obj->controller)));
 $action = strtolower(trim($obj['action']))."Action";
