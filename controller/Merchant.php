@@ -64,16 +64,7 @@ class Merchant
                  
                  
                   $items[] = array("type"=>"SECTION","section_title"=>$row['section_title'],"section_text"=>preg_replace("/\r\n/", "",$first));
-              } 
-
-        
-       
-    
-    
-            
-                   
-               
-            
+              }   
         return $items;//$section->section_list($this->_params);
     }
     
