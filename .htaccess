@@ -2,4 +2,4 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-RewriteRule ^search/$  ?Controller=merchant&action=search [nc,qsa]
+RewriteRule ^search/$  index.php?Controller=merchant&action=search [nc,qsa]
